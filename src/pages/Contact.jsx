@@ -19,20 +19,44 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Construct mailto link
-    const mailtoLink = `mailto:dhanushdevaraj10@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
-    
-    // Open default mail client
-    window.location.href = mailtoLink;
-
-    setTimeout(() => {
+    fetch("https://formsubmit.co/ajax/dhanushdevaraj10@gmail.com", {
+      method: "POST",
+      headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _captcha: "false" // Disables the annoying captcha page
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      setIsSubmitting(false);
+      if (data.success === "true" || data.success === true) {
+        setStatus({
+          type: 'success',
+          message: "Message sent successfully! I will get back to you soon."
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setStatus({
+          type: 'error',
+          message: "Oops! Something went wrong. Please try again."
+        });
+      }
+    })
+    .catch(error => {
       setIsSubmitting(false);
       setStatus({
-        type: 'success',
-        message: "Your email client has been opened to send the message."
+        type: 'error',
+        message: "Network error. Please try again later."
       });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1000);
+      console.log(error);
+    });
   };
 
   return (
