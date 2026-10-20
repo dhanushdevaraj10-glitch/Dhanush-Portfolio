@@ -33,8 +33,8 @@ const Projects = () => {
     },
     {
       title: 'Trendora',
-      url: 'https://food-shop-1.vercel.app/',
-      description: 'A modern website project focused on presenting items through an appealing and accessible web interface.',
+      url: 'https://trendora-steel.vercel.app/',
+      description: 'A modern online shopping and e-commerce platform featuring trendy fashion collections, watches, footwear, and seamless product browsing.',
       buttonText: 'View Website',
       image: '/trendora.jpg',
     }
