@@ -37,6 +37,13 @@ const Projects = () => {
       description: 'A modern online shopping and e-commerce platform featuring trendy fashion collections, watches, footwear, and seamless product browsing.',
       buttonText: 'View Website',
       image: '/trendora.jpg',
+    },
+    {
+      title: 'Food Shop (TFC Nation)',
+      url: 'https://food-shop-1.vercel.app/',
+      description: 'A vibrant food and restaurant website showcasing menu items, recipes, culinary services, and online ordering.',
+      buttonText: 'View Website',
+      image: '/food_shop.jpg',
     }
   ];
 
