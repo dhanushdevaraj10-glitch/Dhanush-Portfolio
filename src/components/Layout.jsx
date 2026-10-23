@@ -101,8 +101,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="border-t border-[var(--color-border-light)] bg-white py-8 mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-sm text-[var(--color-soft-grey)]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row justify-between items-center gap-4">
+        <p className="text-sm text-[var(--color-soft-grey)] text-center md:text-left">
           &copy; {currentYear} Dhanush D. All Rights Reserved.
         </p>
         <div className="flex gap-4">
