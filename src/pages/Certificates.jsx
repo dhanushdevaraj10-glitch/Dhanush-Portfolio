@@ -4,6 +4,12 @@ import { Award, ExternalLink } from 'lucide-react';
 const Certificates = () => {
   const certificatesData = [
     {
+      title: "Advanced Python in Python Programming",
+      organization: "Tec Mac (ISO 9001:2015 & MSME)",
+      description: "Awarded Certificate of Merit with Grade A+ for successfully completing advanced programming covering C, C++, Python, and SQL.",
+      image: "/cert_advanced_python.jpg"
+    },
+    {
       title: "Smart India Hackathon 2026",
       organization: "PSG College of Arts & Science",
       description: "Participated in the Internal Hackathon for Smart India Hackathon 2026 held at GRD Auditorium, PSG College of Arts & Science.",
